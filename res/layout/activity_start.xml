@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".StartActivity" 
+    android:id="@+id/startrootlayout"
+    >
+
+    <ImageView
+        android:id="@+id/elemimage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/elements0" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btStartGame"
+        android:background="@drawable/button_main"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textSize="48sp"
+        android:layout_marginBottom="25dp"
+        android:text="Start game" /> 
+        
+   <Button
+        android:id="@+id/btList"
+        android:background="@drawable/button_list"
+        android:layout_width="250dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="48sp"
+        android:text="Results" />
+    
+        
+    </LinearLayout>
+
+</RelativeLayout>
