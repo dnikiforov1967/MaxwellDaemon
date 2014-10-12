@@ -10,9 +10,10 @@
          android:layout_height="wrap_content"
          android:layout_alignParentLeft="true"
          android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
          android:text="Your result: "
          android:textColor="@color/humble"
-         android:textSize="20sp" />
+         android:textSize="30sp" />
     
     <ImageView
         android:id="@+id/imageView1"

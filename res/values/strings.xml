@@ -8,7 +8,7 @@
 
     <color name="humble">#FF098171</color>
 
-    <string name="title_activity_start">StartActivity</string>
+    <string name="title_activity_start">Maxwell Daemon</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 

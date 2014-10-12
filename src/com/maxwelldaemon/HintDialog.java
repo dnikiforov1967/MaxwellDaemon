@@ -64,6 +64,17 @@ public class HintDialog extends DialogFragment {
 			editor.apply();
 			editor.commit();		
 	}
+	
+	private void setMessage(int prior, String current, TextView tv) {
+		if (prior == 0 || (prior > SemaphoreItem.time)) {
+			tv.setText("Bingo ! New best result: " + current + ((prior==0) ? "" : ", previous best result: " 
+				    + String.format(Locale.US, "%4.1f",((double)prior)/10)));
+			bingo = true;
+		}	
+		else
+			tv.setText("Your current result: " + current + ((prior == 0) ? "" : ", the best result: " 
+		    + String.format(Locale.US, "%4.1f",((double)prior)/10)));		
+	}
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -106,15 +117,7 @@ public class HintDialog extends DialogFragment {
 			
 			TextView tv = (TextView)v.findViewById(R.id.resultText);
 			
-			if (prior == 0 || (prior > SemaphoreItem.time)) {
-				tv.setText("Bingo ! New best result: " + current + ((prior==0) ? "" : ", previous best result: " 
-					    + String.format(Locale.US, "%4.1f",((double)prior)/10)));
-				bingo = true;
-			}	
-			else
-				tv.setText("Your current result: " + current + ((prior == 0) ? "" : ", previous best result: " 
-			    + String.format(Locale.US, "%4.1f",((double)prior)/10)));
-
+			setMessage(prior, current, tv);
 			
 			btnReset.setOnClickListener(
 				new OnClickListener() {
@@ -169,14 +172,7 @@ public class HintDialog extends DialogFragment {
 			
 			TextView tv = (TextView)v.findViewById(R.id.resultText2);
 			
-			if (prior == 0 || (prior > SemaphoreItem.time)) {
-				tv.setText("Bingo ! New best result: " + current + ((prior==0) ? "" : ", previous best result: " 
-					    + String.format(Locale.US, "%4.1f",((double)prior)/10)));
-				bingo = true;
-			}	
-			else
-				tv.setText("Your current result: " + current + ((prior==0) ? "" : ", previous best result: " 
-						+ String.format(Locale.US, "%4.1f",((double)prior)/10)));
+			setMessage(prior, current, tv);
 
 			btnRestart.setOnClickListener(
 					new OnClickListener() {
